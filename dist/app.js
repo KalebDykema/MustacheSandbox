@@ -41,3 +41,29 @@
 //       document.getElementById('target').innerHTML = output
 //     })
 // }
+
+
+
+// // VARIABLES: testing triple curly bracket variables to use unescaped HTML, in addition to & inside {{}}
+// // HTML: <div id="target"></div>
+// // Template: 
+// // * {{name}}
+// // * {{age}}
+// // * {{company}}
+// // * {{{company}}}
+// // * {{&company}}
+// // {{=<% %>=}}
+// // * {{company}}
+// // <%={{ }}=%>
+// let target = document.getElementById('target')
+// let view = {
+//     name: 'Kaleb',
+//     company: '<b>Redstone Content Solutions</b>'
+// } 
+
+// fetch('./template.mustache').then(res=>res.text()).then(template=>{
+//     let output = Mustache.render(template, view)
+//     target.innerHTML = output
+// })
+
+
