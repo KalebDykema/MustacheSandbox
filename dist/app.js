@@ -1,19 +1,26 @@
-// DOM Objects
-let title = document.getElementById('title')
+// // START: sets the inner HTML of an h1 to a Mustache template
+// let title = document.getElementById('title')
+// let view = {
+//   name: 'Kaleb',
+//   calc: ()=> 2+4
+// }
+// let template = '{{name}} spends {{calc}}'
+// let output = Mustache.render(template, view)
 
-// Mustache Object
-let view = {
-  title: 'Kaleb',
-  calc: ()=> 2+4
-}
+// title.innerHTML = output
 
-// Mustache Template
-let template = '{{title}} spends {{calc}}'
 
-// Mustache Render
-let output = Mustache.render(template, view)
 
-// Adds to dom
-title.innerHTML = output
+// // TEMPLATES: pulls the template from a script in the index.html with the type of x-tmpl-mustache, then renders it with a view and outputs it to the target's innerHTML
+// document.onload = renderHello()
 
-// console.log(title)
+// function renderHello() {
+//   let target = document.getElementById('target')
+//   let template = document.getElementById('template').innerHTML
+//   let output = Mustache.render(template, {name: 'Kaleb'})
+//   target.innerHTML = output
+// }
+
+
+
+// 
