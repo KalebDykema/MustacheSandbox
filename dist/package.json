@@ -1,0 +1,14 @@
+{
+  "name": "mustachesandbox",
+  "version": "1.0.0",
+  "description": "A sandbox to practice and learn mustache.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kaleb Dykema",
+  "license": "ISC",
+  "dependencies": {
+    "mustache": "^4.2.0"
+  }
+}
