@@ -50,6 +50,23 @@
 //     })
 // }
 
+// // Further fetch testing
+// let target = document.getElementById('target')
+// let template = fetch('template.mustache')
+//     .then(response => response.text())
+//     .then(template => template)
+//     .catch(error => console.log(error.message))
+// let view = {
+//     name: 'Kaleb'
+// }
+// let renderAndOutPutOnLoad = async () => {
+//     this.template = await template;
+//     let output = Mustache.render(this.template, view)
+//     target.innerHTML = output
+// }
+// renderOnLoad()
+
+
 
 
 // // VARIABLES: testing triple curly bracket variables to use unescaped HTML, in addition to & inside {{}}
