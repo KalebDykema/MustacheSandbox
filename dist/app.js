@@ -179,4 +179,128 @@
 
 
 
-// Left off at Functions in readme
+// // FUNCTIONS: a section's name can be the name of a function it calls as well, rather than the nested tag having to be a function
+// // HTML: <div id="target"></div>
+// let target = document.getElementById('target')
+// let template = '{{#bold}}Hi {{name}}.{{/bold}}'
+// let view = {
+//     name: 'Kaleb',
+//     bold: function() {
+//         return function(view, render){
+//             return `<b>${render(view)}</b>`
+//         }
+//     }
+// }
+// let output = Mustache.render(template, view)
+// target.innerHTML = output
+
+
+
+// // INVERTED SECTIONS: when starting a section with a carat instead of a hash, it only renders if the value is null, undefined, false, falsy, or an empty list
+// // HTML: <div id="target"></div>
+// let target = document.getElementById('target')
+// let template = `
+//     {{#repos}}<b>{{name}}</b>{{/repos}}
+//     {{^repos}}No repos :({{/repos}}
+// `
+// let view = {
+//     repos: []
+// }
+// let output = Mustache.render(template, view)
+// target.innerHTML = output
+
+
+
+// // COMMENTS: starting a tag with ! makes it a comment
+// // HTML: <div id="target"></div>
+// let target = document.getElementById('target')
+// let template = `<h1>Today{{! ignore me }}.</h1>`
+// let output = Mustache.render(template, {})
+// target.innerHTML = output
+
+
+
+// // PARTIALS: further breaking up templates into smaller pieces
+// // HTML: <div id="target"></div>
+// let target = document.getElementById('target')
+// let template = `
+//     <h2>Names</h2>
+//     {{#names}}
+//         {{> user}}
+//     {{/names}}
+// `
+// let view = {
+//     names: [
+//         { name: 'Kaleb '},
+//         { name: 'Crowe '},
+//         { name: 'Bill '},
+//         { name: 'Theresa '}
+//     ]
+// }
+// let partials = {
+//     user: '<b>{{name}}</b><br>'
+// }
+// let output = Mustache.render(template, view, partials)
+// target.innerHTML = output
+
+
+
+// // CUSTOM DELIMITERS: instead of using {{}} for tags, can switch to something else
+// // HTML: <div id="target"></div>
+// let target = document.getElementById('target')
+// let customTags = ['<%', '%>']
+// let template = `
+// <%#turtles%>
+// <%name%><br>
+// <%/turtles%>
+// `
+// let view = {
+//     turtles: [
+//         {name: 'Leonardo'},
+//         {name: 'Raphael'},
+//         {name: 'Donatello'},
+//         {name: 'Michelangelo'}
+//     ]
+// }
+// // Parse and render calls will use the custom tags if the tags are directly set
+// // Mustache.tags = customTags
+// let output = Mustache.render(template, view, {}, customTags)
+// target.innerHTML = output
+
+
+
+// // SETTING DELIMITERS IN TEMPLATES: you can set delimiters in templates as well
+// // HTML: <div id="target"></div>
+// let target = document.getElementById('target')
+// let template = `
+//     * {{ default_tags }}<br>
+//     {{=<% %>=}}
+//     * <% erb_style_tags %><br>
+//     <%={{ }}=%>
+//     * {{ default_tags_again }}<br>
+// `
+// let view = {
+//     default_tags: 'Default',
+//     erb_style_tags: 'ERB Style Tags',
+//     default_tags_again: 'Default Again'
+// }
+// let output = Mustache.render(template, view)
+// target.innerHTML = output
+
+
+
+// // PRE-PARSING AND CACHING TEMPLATES: normally render() parses the template first, but you can do that ahead of time if you wish
+// // HTML: <div id="target"></div>
+// let target = document.getElementById('target')
+// let template = `
+//     <h1>{{ pre_parsed }}</h1>
+// `
+// let view = {
+//     pre_parsed: "Pre-parsed"
+// }
+// Mustache.parse(template)
+// let output = Mustache.render(template, view)
+// target.innerHTML = output
+
+
+
